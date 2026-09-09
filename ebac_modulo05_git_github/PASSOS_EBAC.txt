@@ -1,0 +1,36 @@
+PASSOS PARA O EXERCÍCIO EBAC - GIT/GITHUB
+
+1. Crie um novo repositório no GitHub, por exemplo:
+   ebac-multithreading
+
+2. No PowerShell, entre na pasta do projeto:
+   cd $HOME\Downloads\ebac_modulo05_git_github
+
+3. Inicialize o Git:
+   git init
+   git branch -M main
+
+4. Adicione os arquivos:
+   git add .
+   git commit -m "feat: adiciona projeto de multithreading"
+
+5. Conecte ao repositório do GitHub:
+   git remote add origin URL_DO_SEU_REPOSITORIO
+   git push -u origin main
+
+6. Crie uma nova branch:
+   git checkout -b feature/readme-autor
+
+7. Faça uma pequena alteração no README, se necessário, e salve.
+
+8. Commit da alteração:
+   git add README.md
+   git commit -m "docs: adiciona nome do autor ao README"
+
+9. Envie a branch:
+   git push -u origin feature/readme-autor
+
+10. No GitHub, abra um Pull Request da branch:
+    feature/readme-autor -> main
+
+11. Copie o LINK do Pull Request e envie esse link na plataforma da EBAC.
