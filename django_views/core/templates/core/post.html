@@ -1,0 +1,6 @@
+<article class="card">
+    <h3>{{ post.title }}</h3>
+    <p class="muted">Publicado em {{ post.created_at|date:"d/m/Y H:i" }}</p>
+    <p>{{ post.content|truncatewords:35 }}</p>
+    <a href="{% url 'post_detail' post.pk %}">Ver detalhes</a>
+</article>
