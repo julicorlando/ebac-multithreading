@@ -1,5 +1,11 @@
 from django.contrib import admin
 
+from .models import Post
 
-# O Django Admin fica disponível para gerenciamento de usuários,
-# grupos e dos modelos que forem registrados pela aplicação.
+
+@admin.register(Post)
+class PostAdmin(admin.ModelAdmin):
+    list_display = ("title", "slug", "created_at", "updated_at")
+    search_fields = ("title", "content")
+    prepopulated_fields = {"slug": ("title",)}
+    readonly_fields = ("created_at", "updated_at")
