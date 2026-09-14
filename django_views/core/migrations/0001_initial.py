@@ -19,12 +19,31 @@ class Migration(migrations.Migration):
                         verbose_name="ID",
                     ),
                 ),
-                ("title", models.CharField(max_length=200)),
-                ("content", models.TextField()),
-                ("created_at", models.DateTimeField(auto_now_add=True)),
-                ("updated_at", models.DateTimeField(auto_now=True)),
-                ("published", models.BooleanField(default=True)),
+                ("title", models.CharField(max_length=200, verbose_name="título")),
+                (
+                    "slug",
+                    models.SlugField(
+                        blank=True,
+                        max_length=220,
+                        unique=True,
+                        verbose_name="slug",
+                    ),
+                ),
+                ("content", models.TextField(verbose_name="conteúdo")),
+                (
+                    "created_at",
+                    models.DateTimeField(auto_now_add=True, verbose_name="criado em"),
+                ),
+                (
+                    "updated_at",
+                    models.DateTimeField(auto_now=True, verbose_name="atualizado em"),
+                ),
+                ("published", models.BooleanField(default=True, verbose_name="publicado")),
             ],
-            options={"ordering": ["-created_at"]},
+            options={
+                "verbose_name": "post",
+                "verbose_name_plural": "posts",
+                "ordering": ("-created_at",),
+            },
         ),
     ]

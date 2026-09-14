@@ -1,21 +1,24 @@
 # Exercício EBAC - Django Templates e Admin
 
-Neste exercício, o projeto passa a ter uma camada visual usando Django Templates e um modelo gerenciado pelo Django Admin.
+Neste exercício, o projeto dá continuidade à atividade anterior do Django Admin e adiciona a camada visual usando Django Templates.
 
 ## Implementado
 
-- modelo `Post`;
+- modelo `Post` herdado da correção anterior;
+- campo `slug` único e geração automática a partir do título;
+- `prepopulated_fields` no Django Admin para preencher o slug ao digitar o título;
+- campo `published` para controlar quais posts aparecem no site;
 - registro de `Post` no Django Admin;
-- migration inicial;
+- migration inicial compatível com todos os campos do modelo;
 - `base.html`;
 - `index.html`;
 - `post.html`;
 - `detail.html`;
 - `sidebar.html`;
-- view de listagem e view de detalhe;
-- testes das views e do registro no Admin.
-
-> Observação: o enunciado cita modelos construídos em aulas anteriores, mas esses modelos não estavam presentes no repositório usado nos exercícios anteriores. Por isso foi adotado um modelo mínimo `Post`, coerente com os templates `post` e `detail` citados no exercício.
+- view de listagem exibindo apenas posts publicados;
+- view de detalhe impedindo acesso a posts não publicados;
+- testes das views, do slug e do registro no Admin;
+- workflow de CI herdado da atividade anterior para validar migrations, Django check e testes.
 
 ## Executar
 
@@ -31,4 +34,4 @@ Acesse:
 - portfólio: `http://127.0.0.1:8000/home/`
 - administração: `http://127.0.0.1:8000/admin/`
 
-Para cadastrar conteúdo, entre no Admin e adicione registros em **Posts**.
+Para cadastrar conteúdo, entre no Admin e adicione registros em **Posts**. Ao preencher o título, o campo slug é sugerido automaticamente. Apenas posts marcados como publicados são exibidos no site.
