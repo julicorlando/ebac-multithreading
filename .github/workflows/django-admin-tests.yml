@@ -1,12 +1,14 @@
-name: Django Admin Tests
+name: Django Admin e Templates Tests
 
 on:
   push:
     branches:
       - django-admin
+      - django-templates
   pull_request:
     branches:
       - feature/home-view
+      - django-admin
 
 jobs:
   test:
