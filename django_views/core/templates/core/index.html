@@ -1,0 +1,21 @@
+{% extends "core/base.html" %}
+
+{% block title %}Início | Portfólio{% endblock %}
+
+{% block content %}
+<section class="card">
+    <h2>Olá, seja bem-vindo!</h2>
+    <p>Este é o portfólio construído com Django Templates.</p>
+</section>
+
+<section>
+    <h2>Publicações</h2>
+    {% for post in posts %}
+        {% include "core/post.html" with post=post %}
+    {% empty %}
+        <div class="card">
+            <p class="muted">Nenhuma publicação cadastrada ainda.</p>
+        </div>
+    {% endfor %}
+</section>
+{% endblock %}

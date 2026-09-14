@@ -5,7 +5,9 @@ from .models import Post
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ("title", "slug", "created_at", "updated_at")
+    list_display = ("title", "slug", "published", "created_at", "updated_at")
+    list_filter = ("published", "created_at")
     search_fields = ("title", "content")
     prepopulated_fields = {"slug": ("title",)}
     readonly_fields = ("created_at", "updated_at")
+    ordering = ("-created_at",)

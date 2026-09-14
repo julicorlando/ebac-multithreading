@@ -38,6 +38,7 @@ class Migration(migrations.Migration):
                     "updated_at",
                     models.DateTimeField(auto_now=True, verbose_name="atualizado em"),
                 ),
+                ("published", models.BooleanField(default=True, verbose_name="publicado")),
             ],
             options={
                 "verbose_name": "post",
